@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const farmerDetails = document.getElementById("farmerDetails");
 
     // Fetch data from the CSV file
-    fetch("Data_v2_csv.csv")
+    fetch("Data_v2_cs.csv")
         .then((response) => response.text())
         .then((data) => {
             // Parse the CSV data into an array of objects
