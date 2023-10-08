@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Farmers Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        #farmerDetails {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+    </style>
+    
+    <!-- Include your JavaScript file -->
+    <script src="script.js"></script> <!-- Replace "script.js" with the actual file path if needed -->
+</head>
+<body>
+    <h1>Farmers Information</h1>
+    
+    <!-- Dropdown for Farmer Name -->
+    <label for="farmerNameDropdown">Select Farmer:</label>
+    <select id="farmerNameDropdown"></select>
+    
+    <!-- Display other columns' details here -->
+    <div id="farmerDetails"></div>
+</body>
+</html>
