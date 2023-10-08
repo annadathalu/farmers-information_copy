@@ -48,38 +48,36 @@
             background-size: 4em 2em; /* Increase arrow size (4 times wider, 2 times taller) */
         }
 
-        #farmerDetails {
-            margin-top: 20px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
-        }
-
-        p {
-            margin: 5px 0;
-            font-size: 2em; /* Increase font size */
-            text-align: left; /* Align to the left side */
-        }
-
         /* Style the image to match the label font size */
         img.label-image {
             font-size: 2em;
             vertical-align: middle;
         }
+
+        /* Remove background image for the select element with the no-background-image class */
+        .no-background-image {
+            background-image: none !important;
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script> 
     <!-- Include your JavaScript file -->
     <script src="script.js"></script> <!-- Replace "script.js" with the actual file path if needed -->
-
-
 </head>
 <body>
+    <div>
+        <label for="languageToggle">Language/భాష:</label>
+        <select id="languageToggle" class="no-background-image">
+            <option value="eng">English</option>
+            <option value="tel">తెలుగు</option>
+        </select>
+    </div>
+    
     <!-- Display the heading with the icon -->
     <h1>రైతుల సమాచారం <img class="icon-image" src="icon.jpg" alt="Icon Image"></h1>
     
     <!-- Display the label and image -->
     <label for="farmerNameDropdown" style="color: rgb(255, 255, 255);">రైతును ఎంచుకోండి:</label>
-    <select id="farmerNameDropdown"></select>
+    <select id="farmerNameDropdown" class="select"></select>
     
     <!-- Display other columns' details here -->
     <div id="farmerDetails"></div>
