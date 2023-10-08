@@ -11,9 +11,15 @@
         }
 
         h1 {
-            color: #333;
+            color: rgb(255, 106, 0);
             font-size: 4em; /* Increase font size */
             text-align: left; /* Align to the left side */
+        }
+
+        /* Style the icon image to match the font size of h1 */
+        img.icon-image {
+            font-size: 4em;
+            vertical-align: middle;
         }
 
         label {
@@ -21,14 +27,24 @@
             font-size: 2em; /* Increase font size */
             text-align: left; /* Align to the left side */
             color: darkorange; /* Set label text color to dark orange */
-        }
-
+            display: inline-block; /* Make label a block element */
+            padding: 10px 20px; /* Add padding to create a rectangle box */
+            background-color: rgb(2, 2, 120); /* Set background color to blue */
+            color: rgb(255, 255, 255); /* Set text color to white */
+            border-radius: 5px; /* Add rounded corners to the box */
         }
 
         select {
             padding: 20px; /* Increase padding */
             font-size: 2em; /* Increase font size */
             text-align: left; /* Align to the left side */
+            appearance: none; /* Remove default arrow in some browsers */
+            -webkit-appearance: none; /* Remove default arrow in WebKit browsers */
+            -moz-appearance: none; /* Remove default arrow in Firefox */
+            background-image: url('down-arrow.jpg'); /* Set custom arrow image */
+            background-repeat: no-repeat;
+            background-position: right center; /* Adjust arrow position */
+            background-size: 4em 2em; /* Increase arrow size (4 times wider, 2 times taller) */
         }
 
         #farmerDetails {
@@ -43,6 +59,12 @@
             font-size: 2em; /* Increase font size */
             text-align: left; /* Align to the left side */
         }
+
+        /* Style the image to match the label font size */
+        img.label-image {
+            font-size: 2em;
+            vertical-align: middle;
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script> 
     <!-- Include your JavaScript file -->
@@ -51,10 +73,11 @@
 
 </head>
 <body>
-    <h1>రైతుల సమాచారం</h1>
+    <!-- Display the heading with the icon -->
+    <h1>రైతుల సమాచారం <img class="icon-image" src="icon.jpg" alt="Icon Image"></h1>
     
-    <!-- Dropdown for Farmer Name -->
-    <label for="farmerNameDropdown">రైతును ఎంచుకోండి:</label>
+    <!-- Display the label and image -->
+    <label for="farmerNameDropdown" style="color: rgb(255, 255, 255);">రైతును ఎంచుకోండి:</label>
     <select id="farmerNameDropdown"></select>
     
     <!-- Display other columns' details here -->
