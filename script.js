@@ -3,18 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const farmerDetails = document.getElementById("farmerDetails");
     const languageToggle = document.getElementById("languageToggle");
 
-    // Define column name mapping for "tel" language
-    const telColumnMapping = {
-        "Farmer Name": "నామము",
-        "Phone": "ఫోన్",
-        "Current Crops": "ప్రస్తుత పంటలు",
-        "Variants": "వైవిధ్యాలు",
-        "Farm Size": "వ్యవసాయ పరిమాణం",
-        "Quantity of produce": "ఉత్పత్తి పరిమాణం",
-        "Farm Location": "వ్యవసాయ స్థానం",
-        "Other Details": "ఇతర వివరాలు"
-    };
-
     // Function to fetch data based on selected language
     function fetchData(selectedLanguage) {
         let csvFileName = "";
@@ -33,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Populate the dropdown with Farmer Names from the CSV data
                 dataArray.forEach((item) => {
                     const option = document.createElement("option");
-                    option.value = item[telColumnMapping["Farmer Name"]];
-                    option.textContent = item[telColumnMapping["Farmer Name"]];
+                    option.value = item["Farmer Name"];
+                    option.textContent = item["Farmer Name"];
                     farmerNameDropdown.appendChild(option);
                 });
 
@@ -42,16 +30,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 farmerNameDropdown.addEventListener("change", function () {
                     const selectedFarmer = this.value;
                     const selectedData = dataArray.find(
-                        (item) => item[telColumnMapping["Farmer Name"]] === selectedFarmer
+                        (item) => item["Farmer Name"] === selectedFarmer
                     );
                     if (selectedData) {
-                        farmerDetails.innerHTML = `<p><strong>Phone:</strong> ${selectedData[telColumnMapping["Phone"]]}</p>
-                                                  <p><strong>Current Crops:</strong> ${selectedData[telColumnMapping["Current Crops"]]}</p>
-                                                  <p><strong>Variants:</strong> ${selectedData[telColumnMapping["Variants"]]}</p>
-                                                  <p><strong>Farm Size:</strong> ${selectedData[telColumnMapping["Farm Size"]]}</p>
-                                                  <p><strong>Quantity of produce:</strong> ${selectedData[telColumnMapping["Quantity of produce"]]}</p>
-                                                  <p><strong>Farm Location:</strong> ${selectedData[telColumnMapping["Farm Location"]]}</p>
-                                                  <p><strong>Other Details:</strong> ${selectedData[telColumnMapping["Other Details"]]}</p>`;
+                        farmerDetails.innerHTML = `<p><strong>Phone:</strong> ${selectedData["Phone"]}</p>
+                                                  <p><strong>Current Crops:</strong> ${selectedData["Current Crops"]}</p>
+                                                  <p><strong>Variants:</strong> ${selectedData["Variants"]}</p>
+                                                  <p><strong>Farm Size:</strong> ${selectedData["Farm Size"]}</p>
+                                                  <p><strong>Quantity of produce:</strong> ${selectedData["Quantity of produce"]}</p>
+                                                  <p><strong>Farm Location:</strong> ${selectedData["Farm Location"]}</p>
+                                                  <p><strong>Other Details:</strong> ${selectedData["Other Details"]}</p>`;
                     } else {
                         farmerDetails.innerHTML = "";
                     }
