@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const farmerDetails = document.getElementById("farmerDetails");
 
     // Fetch data from the CSV file
-    fetch("Data_v2_csv.csv")
+    fetch("Data_v2_mapped.csv")
         .then((response) => response.text())
         .then((data) => {
             // Parse the CSV data into an array of objects
@@ -29,7 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
                                               <p><strong>Variants:</strong> ${selectedData["Variants"]}</p>
                                               <p><strong>Farm Size:</strong> ${selectedData["Farm Size"]}</p>
                                               <p><strong>Quantity of produce:</strong> ${selectedData["Quantity of produce"]}</p>
-                                              <p><strong>Farm Location:</strong> ${selectedData["Farm Location"]}</p>`;
+                                              <p><strong>Farm Location:</strong> ${selectedData["Farm Location"]}</p>
+                                              <p><strong>Other Details:</strong> ${selectedData["Other Details"]}</p>`;
                 } else {
                     farmerDetails.innerHTML = "";
                 }
