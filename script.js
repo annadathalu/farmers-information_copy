@@ -3,22 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const farmerDetails = document.getElementById("farmerDetails");
     const languageToggle = document.getElementById("languageToggle");
 
-    // Function to preprocess the data and replace #VALUE! with ""
-    function preprocessData(dataArray) {
-        const processedData = [];
-
-        dataArray.forEach((item) => {
-            const processedItem = {};
-            for (const key in item) {
-                const value = item[key];
-                processedItem[key] = value === "#VALUE!" ? "" : value;
-            }
-            processedData.push(processedItem);
-        });
-
-        return processedData;
-    }
-
     // Function to fetch data based on selected language
     function fetchData(selectedLanguage) {
         let fileName = "";
@@ -71,9 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     const worksheet = workbook.Sheets[workbook.SheetNames[0]];
                     dataArray = XLSX.utils.sheet_to_json(worksheet);
                 }
-
-                // Preprocess the data to replace #VALUE! with ""
-                dataArray = preprocessData(dataArray);
 
                 // Populate the dropdown with Farmer Names from the data
                 dataArray.forEach((item) => {
